@@ -8,8 +8,8 @@
     "steps": [
       {
         "title": "downlaod and install ",
-        "text": "step1/text.md",
-        "verify": "step1/download.sh"
+        "text": "step-1/text.md",
+        "verify": "step-1/download.sh"
       },
     ]
 }
