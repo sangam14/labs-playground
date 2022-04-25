@@ -2,7 +2,7 @@
    "title": "Install Terrascan",
     "description": "Install Terrascan and build and scan k8s cluster",
     "difficulty": "Beginner",
-    "time": "10",
+    "time": "20",
     "details": {
       "steps": [
         {
