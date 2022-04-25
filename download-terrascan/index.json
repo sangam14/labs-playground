@@ -1,0 +1,15 @@
+{
+  "title": "downlaod terrascan",
+  "description": "install terrascan ",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+    },
+    "steps": [
+      {
+        "title": "downlaod and install ",
+        "text": "step1/text.md",
+        "verify": "step1/download.sh"
+      },
+    ]
+}
