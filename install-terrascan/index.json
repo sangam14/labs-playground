@@ -1,20 +1,24 @@
 {
-    "title": "Install Terrascan",
+   "title": "Install Terrascan",
     "description": "Install Terrascan and build and scan k8s cluster",
+    "difficulty": "Beginner",
+    "time": "10",
     "details": {
-      "intro": {
-        "text": "intro.md"
-      },
       "steps": [
         {
-          "title": "download terrascan",
-          "code": "foreground.sh"
+          "title": "Step 1",
+          "text": "step1.md"
         }
       ],
+      "intro": {
+        "text": "intro.md",
+        "code": "foreground.sh"
+      },
       "finish": {
         "text": "finish.md"
       }
     },
+    "environment": {"uilayout": "terminal"},
     "backend": {
       "imageid": "kubernetes-kubeadm-1node-ubuntu20.04"
     }
