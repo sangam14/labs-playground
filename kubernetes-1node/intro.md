@@ -1,1 +1,1 @@
-terrascan 
+setup 1 node kubenetes cluster

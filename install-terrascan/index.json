@@ -1,0 +1,21 @@
+{
+    "title": "Install Terrascan",
+    "description": "Install Terrascan and build and scan k8s cluster",
+    "details": {
+      "intro": {
+        "text": "intro.md"
+      },
+      "steps": [
+        {
+          "title": "download terrascan",
+          "code": "foreground.sh"
+        }
+      ],
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "backend": {
+      "imageid": "kubernetes-kubeadm-1node-ubuntu20.04"
+    }
+  }
