@@ -8,12 +8,9 @@
         {
           "title": "Step 1",
           "text": "intro.md"
+          "code": "foreground.sh"
         }
       ],
-      "intro": {
-    
-        "code": "foreground.sh"
-      },
       "finish": {
         "text": "finish.md"
       }
