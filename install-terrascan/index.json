@@ -4,7 +4,7 @@
     "difficulty": "Beginner",
     "time": "20",
     "details": {
-      "steps": [
+      "intro": [
         {
           "title": "Step 1",
           "text": "intro.md" ,
