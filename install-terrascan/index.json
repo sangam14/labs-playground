@@ -7,7 +7,7 @@
       "steps": [
         {
           "title": "Step 1",
-          "text": "intro.md"
+          "text": "intro.md" ,
           "code": "foreground.sh"
         }
       ],
