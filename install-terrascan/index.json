@@ -9,14 +9,13 @@
           "title": "Step 1",
           "text": "intro.md" ,
           "code": "foreground.sh"
-        }
-    ,   "command": [
+        },
+       "command": 
       {
           "title": "Step 1",
           "text": "command.md"
-    }
-      ]
-    ,
+    },
+  
       "finish": {
         "text": "finish.md"
       }
