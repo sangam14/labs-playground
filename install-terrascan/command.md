@@ -37,7 +37,7 @@ Use "terrascan [command] --help" for more information about a command.
 
 Initializes Terrascan and clones policies from the Terrascan GitHub repository.
 ```
-    terrascan init
+terrascan init
 ```{{exec}}
 the initalization process download the latest Rego policies [repository ](https://github.com/accurics/terrascan) into ~/.terrascan. The scan command will implicitly run this before a scan if it detects that there are no policies found.
 
