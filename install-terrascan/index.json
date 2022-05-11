@@ -9,9 +9,8 @@
           "title": "Step 1",
           "text": "intro.md" ,
           "code": "foreground.sh"
-        },
-        "command": 
-        {
+        }
+    ,   "command": {
           "title": "Step 2",
           "text": "command.md"
         }
