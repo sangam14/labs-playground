@@ -10,13 +10,13 @@
           "text": "intro.md" ,
           "code": "foreground.sh"
         },
-       "command": 
-      {
-          "title": "Step 1",
-          "text": "command.md"
-    },
-  
-      "finish": {
+        "steps": [
+          {
+            "title": "Terrascan Command",
+            "text": "command.md"
+          }
+        ],
+        "finish": {
         "text": "finish.md"
       }
     },
