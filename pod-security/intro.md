@@ -34,6 +34,10 @@ metadata:
     pod-security.kubernetes.io/enforce-version: latest
     pod-security.kubernetes.io/warn: baseline
     pod-security.kubernetes.io/warn-version: latest
+  # We are setting these to our _desired_ `enforce` level.
+    pod-security.kubernetes.io/audit: baseline
+    pod-security.kubernetes.io/audit-version: latest
+  
 ---
 apiVersion: v1
 kind: Namespace
@@ -44,7 +48,8 @@ metadata:
     pod-security.kubernetes.io/enforce-version: latest
     pod-security.kubernetes.io/warn: restricted
     pod-security.kubernetes.io/warn-version: latest
-
+    pod-security.kubernetes.io/audit:  restricted
+    pod-security.kubernetes.io/audit-version: latest
 EOF
 ```
 
@@ -73,7 +78,7 @@ spec:
       command: ["sh", "-c", 'while true; do echo "Running..."; sleep 2h; done']
       imagePullPolicy: Always
       securityContext:
-        privileged: true
+        privileged: false
         runAsUser: 0
         allowPrivilegeEscalation: true
         readOnlyRootFilesystem: false
