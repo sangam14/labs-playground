@@ -16,7 +16,7 @@ output will be something like this :
 
 apply pod security enforcement to namespace
 ```
-
+```cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -45,5 +45,42 @@ metadata:
     pod-security.kubernetes.io/warn: restricted
     pod-security.kubernetes.io/warn-version: latest
 
+EOF
+```
 
-```{{exec}}
+create 3 namespaces with different pod security policies standars :
+
+```
+kubectl create namespace my-privileged-namespace
+kubectl create namespace my-baseline-namespace
+kubectl create namespace my-restricted-namespace
+```
+verify namespaces 
+
+```
+kubectl get namespaces
+``` 
+test.yaml 
+```cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busypod-priliveged
+spec:
+  containers:
+    - image: busybox
+      name: busybox
+      command: ["sh", "-c", 'while true; do echo "Running..."; sleep 2h; done']
+      imagePullPolicy: Always
+      securityContext:
+        privileged: true
+        runAsUser: 0
+        allowPrivilegeEscalation: true
+        readOnlyRootFilesystem: false
+        capabilities:
+          add: ["CAP_SYS_BOOT"]
+EOF
+
+
+```
+
