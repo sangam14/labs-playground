@@ -20,14 +20,6 @@ apply pod security enforcement to namespace
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: my-privileged-namespace
-  labels:
-    pod-security.kubernetes.io/enforce: privileged
-    pod-security.kubernetes.io/enforce-version: latest
----
-apiVersion: v1
-kind: Namespace
-metadata:
   name: my-baseline-namespace
   labels:
     pod-security.kubernetes.io/enforce: baseline
@@ -53,39 +45,27 @@ metadata:
 EOF
 ```
 
-create 3 namespaces with different pod security policies standars :
+create a pod in my-privileged-namespace ! 
+```
+kubectl apply -f  pod-sec.yaml --namespace=my-baseline-namespace
+```
+kubectl apply -f https://k8s.io/examples/pods/security/security-context.yaml --namespace=my-restricted-namespace
+
+# badpod 
 
 ```
-kubectl create namespace my-privileged-namespace
-kubectl create namespace my-baseline-namespace
-kubectl create namespace my-restricted-namespace
+git clone https://github.com/sangam14/badpod.git 
+cd badpod 
 ```
-verify namespaces 
-
 ```
-kubectl get namespaces
-``` 
-test.yaml 
-```cat <<EOF | kubectl apply -f -
-apiVersion: v1
-kind: Pod
-metadata:
-  name: busypod-priliveged
-spec:
-  containers:
-    - image: busybox
-      name: busybox
-      command: ["sh", "-c", 'while true; do echo "Running..."; sleep 2h; done']
-      imagePullPolicy: Always
-      securityContext:
-        privileged: false
-        runAsUser: 0
-        allowPrivilegeEscalation: true
-        readOnlyRootFilesystem: false
-        capabilities:
-          add: ["CAP_SYS_BOOT"]
-EOF
+~/Documents/GitHub/badpod main* ❯ cd baseline
 
-
+~/Documents/GitHub/badpod/baseline main* ❯ ls
+disallow-capabilities          disallow-host-process          restrict-apparmor-profiles
+disallow-host-namespaces       disallow-privileged-containers restrict-seccomp
+disallow-host-path             disallow-proc-mount            restrict-sysctls
+disallow-host-ports            disallow-selinux
+disallow-host-ports-range      kustomization.yaml
 ```
+
 
