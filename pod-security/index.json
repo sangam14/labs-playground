@@ -7,7 +7,14 @@
     },
     "steps": [
       {
-        "title": "List all pods",
+        "title": "basline",
+        "text": "step1.md"
+      }  , {
+        "title": "basline",
+        "text": "step1.md"
+      }
+      , {
+        "title": "basline",
         "text": "step1.md"
       }
     ],

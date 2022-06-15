@@ -65,16 +65,21 @@ cd badpod
 
 ```
 nodeName: control-plane
+
 ```
 
 ## Check to see if etcd is running on the control-plane node and see where the database is (This is on a kubeadm created cluster)
+
 ```
 data-dir=/var/lib/etcd
+
 ```
 
 ## View the data in etcd database:
+
 ```
 strings /var/lib/etcd/member/snap/db | less
+
 ```
 
 ## Look for kubeconfigs in the host filesystem
